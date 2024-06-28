@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница с карточкой товара и формой</title>
+    <style>
+        /* Общие стили для страницы */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        /* Стили для карточки товара */
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 100%; /* максимальная ширина карточки */
+        }
+        .product-card .labels {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* разрешаем перенос лейблов на новую строку */
+            margin-bottom: 10px; /* отступ между лейблами и изображением */
+        }
+        .product-card .labels div {
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 12px;
+            margin-bottom: 5px; /* уменьшаем отступ между лейблами */
+        }
+        .product-card .labels .recommend {
+            background-color: #8e44ad;
+        }
+        .product-card .labels .new {
+            background-color: #27ae60;
+        }
+        .product-card .labels .sale {
+            background-color: #e74c3c;
+        }
+        .product-card .labels .sale span {
+            background-color: #c0392b;
+            padding: 0 5px;
+            margin-left: 5px;
+            border-radius: 3px;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            max-width: 100%; /* максимальная ширина изображения */
+        }
+        .product-card .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product-card .rating {
+            color: #f39c12;
+            margin-bottom: 5px;
+        }
+        .product-card .availability {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        .product-card .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product-card .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        .product-card .savings {
+            background-color: #f1c40f;
+            padding: 5px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Стили для формы */
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin-top: 20px;
+            max-width: 100%; /* максимальная ширина формы */
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group .phone-input {
+            display: flex;
+        }
+        .form-group .phone-input input {
+            width: auto;
+            margin-right: 5px;
+        }
+        .form-group .phone-input input:first-child {
+            width: 40px;
+        }
+        .form-group .phone-input input:nth-child(2) {
+            width: 50px;
+        }
+        .form-group .phone-input input:last-child {
+            flex: 1;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-actions .save-btn {
+            background-color: #f60;
+            color: #fff;
+        }
+        .form-actions .cancel-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media (max-width: 600px) {
+            .product-card,
+            .form-container {
+                width: 100%; /* элементы занимают всю доступную ширину */
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Название сайта</h1>
+            <nav>
+                <a href="#">Главная</a>
+                <a href="#">О нас</a>
+                <a href="#">Услуги</a>
+                <a href="#">Продукция</a>
+                <a href="#">Контакты</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div style="display: flex; justify-content: space-between;">
+            <div class="product-card">
+                <div class="labels">
+                    <div class="recommend">СОВЕТУЕМ</div>
+                    <div class="new">НОВИНКА</div>
+                    <div class="sale">АКЦИЯ <span>7 ДНЕЙ</span></div>
+                </div>
+                <img src="backpack.jpeg" alt="Велосипедный рюкзак">
+                <div class="title">Велосипедный рюкзак</div>
+                <div class="rating">★★★★☆</div>
+                <div class="availability">Мало</div>
+                <div class="price">1 529.10 руб. /шт</div>
+                <div class="old-price">1 699 руб.</div>
+                <div class="savings">Экономия 169.90 руб.</div>
+            </div>
+
+            <div class="form-container">
+                <form>
+                    <div class="form-group">
+                        <label for="recipient-name">Имя получателя:</label>
+                        <input type="text" id="recipient-name" value="Дмитрий Наумов">
+                    </div>
+                    <div class="form-group">
+                        <label for="country">Страна/Регион:</label>
+                        <select id="country">
+                            <option>Российская Федерация</option>
+                            <!-- Добавьте другие страны/регионы здесь -->
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Улица, дом, квартира:</label>
+                        <input type="text" id="address" value="ул. Гоголя, д. 10, кв. 5">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Телефон:</label>
+                        <div class="phone-input">
+                            <input type="text" id="phone-code" value="+7">
+                            <input type="text" id="phone-number" value="123">
+                            <input type="text" id="phone-extension" value="456-78-90">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Примечания к заказу:</label>
+                        <textarea id="notes" rows="4">Оставьте дополнительную информацию здесь...</textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="save-btn">Оформить заказ</button>
+                        <button type="button" class="cancel-btn">Отмена</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Все права защищены</p>
+            <div>
+                <a href="https://vk.com/maksik15y_o">VK</a>
+                <a href="https://github.com/maxim4455">GitHub</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

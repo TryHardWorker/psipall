@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>10-12</title>
+
+    <script>
+        //1
+        function showCurrentDate() {
+            const currentDate = new Date();
+            const month = currentDate.toLocaleString('default', { month: 'long' });
+            const year = currentDate.getFullYear();
+            alert(`Текущий месяц: ${month}, текущий год: ${year}`);
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="showCurrentDate()">Показать текущую дату</button>
+
+    <script>
+        //2
+        const firstName = "НИКИТА"; 
+        const lastName = "МАНДРИКЕВИЧ"; 
+        let count = 0;
+
+        do {
+            document.write(`${lastName} ${firstName}<br>`);
+            count++;
+        } while (count < 15);
+        //3
+        const originalArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        document.write("<p>Исходный массив: " + originalArray + "</p>");
+        const reversedArray = originalArray.reverse();
+        const sum = reversedArray.reduce((acc, curr) => acc + curr, 0);
+        const average = sum / reversedArray.length;
+        document.write("<p>Измененный массив (в обратном порядке): " + reversedArray + "</p>");
+        document.write("<p>Среднее арифметическое: " + average + "</p>");
+        //5
+        const S1 = "ВАШЕ ИМЯ";
+        const lengthS1 = S1.length;
+        document.write("<p> dlinna S1 " + lengthS1 + "</p>");
+        const S2 = "ВАШИ УВЛЕЧЕНИЯ";
+        const modifiedS2 = S2.replace(/\s+/g, "  "); 
+        document.write("<p> probely " + modifiedS2 + "</p>");    
+        const replacedS1 = S1.replace("ВАШЕ ИМЯ", "Павел");
+        document.write("<p> zamena " + replacedS1 + "</p>");
+    </script>
+    <script src="main.js"></script>
+   
+</body>
+</html>

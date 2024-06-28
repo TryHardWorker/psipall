@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input,
+        .form-group select {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        .form-group input[type="checkbox"] {
+            width: auto;
+        }
+        .form-group .phone-input {
+            display: flex;
+        }
+        .form-group .phone-input input {
+            width: auto;
+            margin-right: 5px;
+        }
+        .form-group .phone-input input:first-child {
+            width: 40px;
+        }
+        .form-group .phone-input input:nth-child(2) {
+            width: 50px;
+        }
+        .form-group .phone-input input:last-child {
+            flex: 1;
+        }
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        .form-actions button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-actions .save-btn {
+            background-color: #f60;
+            color: #fff;
+        }
+        .form-actions .cancel-btn {
+            background-color: #ccc;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-group">
+            <label for="recipient-name">Имя получателя:</label>
+            <input type="text" id="recipient-name" value="Dmitriy Naumov">
+        </div>
+        <div class="form-group">
+            <label for="country">Страна/Регион:</label>
+            <select id="country">
+                <option>Russian Federation</option>
+                <!-- Добавьте другие страны/регионы здесь -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="address">Улица, дом, квартира:</label>
+            <input type="text" id="address" value="Gogolya 37-15">
+        </div>
+        <div class="form-group">
+            <label for="region">Край/Область/Регион:</label>
+            <select id="region">
+                <option>Moscow</option>
+                <!-- Добавьте другие регионы здесь -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="city">Город:</label>
+            <input type="text" id="city" value="Moscow">
+        </div>
+        <div class="form-group">
+            <label for="postal-code">Почтовый индекс:</label>
+            <input type="text" id="postal-code" value="109117">
+            <div>
+                <input type="checkbox" id="no-postal-code">
+                <label for="no-postal-code">В моём адресе нет почтового кода.</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="phone">Мобильный телефон:</label>
+            <div class="phone-input">
+                <input type="text" value="+7">
+                <input type="text" value="495">
+                <input type="text" value="1234567" style="background-color: #ffffcc;">
+            </div>
+            <div class="form-group">
+                <label for="alt-phone">or</label>
+                <input type="text" id="alt-phone">
+            </div>
+        </div>
+        <div class="form-actions">
+            <button class="save-btn">Save</button>
+            <button class="cancel-btn">Отмена</button>
+        </div>
+    </div>
+</body>
+</html>

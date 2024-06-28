@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>13-14</title>
+    <style>
+        .personal-info {
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        /* 2 */
+        body {
+            background-color: red; 
+            color: blue;
+            margin: 0; 
+            padding: 0; 
+            position: relative; 
+        }
+
+        #myBlock {
+            width: 200px;
+            height: 100px;
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+        #myBlock.changed {
+            background-color: yellow; 
+            color: green; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="personal-info">
+        <span>Фамилия Имя Отчество</span>
+    </div>
+    <div class="personal-info">
+        <a href="https://store.steampowered.com/?l=russian" target="_blank">Мой любимый сайт</a>
+    </div>
+    <img src="c:\Users\Никита\OneDrive\Рабочий стол\ггпк\псип\13-14\image.jpg" alt="Любое изображение">
+
+
+
+    <button id="changeOrder" onclick="changeStyle()">Сменить порядок</button>
+<div id="element2">Элемент 2</div>
+<script>
+    const button = document.getElementById('changeOrder');
+    const element2 = document.getElementById('element2');
+
+    button.addEventListener('click', () => {
+        // Меняем местами элементы 1 и 2
+        const parent = changeOrder.parentNode;
+        parent.insertBefore(element2, changeOrder);
+    });
+    //2
+    function changeStyle() {
+            const block = document.getElementById('changeOrders');
+            block.classList.add('changed'); 
+        }
+    //3 
+    const osInfo = window.navigator.userAgent;
+        alert(`Информация об операционной системе: ${osInfo}`);
+        function showPopup() {
+            alert('Прошло 6 секунд! Это диалоговое окно.');
+        }
+
+        setTimeout(showPopup, 6000);
+</script>
+<script src="main.js"></script>
+
+</body>
+</html>

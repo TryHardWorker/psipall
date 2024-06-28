@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Example</title>
+    <style>
+.container {  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "fgfg gg ijk bhy"
+    "yuyuyu yuyuyu yuyuyu yuyuyu"
+    "pop pop pop pop"
+    "hjk hjk hjk hjk"
+    "bvn bvn bvn bvn"
+    "zsd zsd zsd zsd"
+    "vbn vbn vbn vbn";
+}
+.container > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border: 2px solid #000;
+        }
+
+.fgfg { grid-area: fgfg; background-color: lightblue;}
+
+.gg { grid-area: gg; background-color: red;}
+
+.yuyuyu { grid-area: yuyuyu; background-color: rgb(173, 230, 180);}
+
+.pop { grid-area: pop; background-color: rgb(230, 173, 195);}
+
+.hjk { grid-area: hjk; background-color: rgb(178, 224, 72);}
+
+.bvn { grid-area: bvn; background-color: rgb(22, 74, 92);}
+
+.zsd { grid-area: zsd; background-color: rgb(53, 46, 149);}
+
+.vbn { grid-area: vbn; background-color: rgb(120, 3, 101);}
+
+.bhy { grid-area: bhy; background-color: rgb(36, 78, 126);}
+
+.ijk { grid-area: ijk; background-color: rgb(174, 173, 230);}
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="fgfg">1</div>
+      <div class="gg">2</div>
+      <div class="yuyuyu">3</div>
+      <div class="pop">4</div>
+      <div class="hjk">5</div>
+      <div class="bvn">6</div>
+      <div class="zsd">7</div>
+      <div class="vbn">8</div>
+      <div class="bhy">9</div>
+      <div class="ijk">10</div>
+    </div>
+  </body></html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LR8</title>
+    <style>
+       body {
+    background-color: #c7c7c7; /* Серый цвет (hex код) */
+}
+/* Стили для контейнера строки */
+.container {
+            display: flex;
+            align-items: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .text {
+            font-size: 16px;
+            color: #333;
+        }
+
+        .image {
+            max-width: 100px;
+            margin-left: 20px;
+            align-items: start;
+        }
+
+        .my-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .my-button:hover {
+            background-color: #dedede;
+        }
+
+        .my-button:active {
+            background-color: black;
+        }
+
+        .my-input {
+            width: 300px;
+            padding: 5px;
+            font-size: 16px;
+        }
+    </style>
+    </style>
+</head>
+<body >
+    <div class="container" >
+        <form>
+            <h2>Бесплатно зарeгестрироваться</h2>
+            <input type="radio" id="organizer" name="role" value="organizer" checked> <label for="organizer">Организер</label>
+  <input type="radio" id="employer" name="role" value="employer"> <label for="employer">Работодатель</label><br>
+            <label for="email">Email</label>
+            <input class="my-input" type="text" name="email" required>
+            <br>Нигде не публикуется</br>
+            <label for="login">Логин</label>
+            <input class="my-input" type="text" name="login" required>
+            <br>3-15 символов</br>
+            <label for="psw">Пароль</label>
+            <input class="my-input" type="password" name="psw" required>
+            <br>От 6 до 24 символов</br>
+            
+        </form>
+    </div>
+    <div class="container">
+        <p class="text">код с картинки</p>
+        <img class="image" src="dvi.drawio.png" alt="Фото">
+    </div>
+    <br>Обновить картинку</br><br></br><br></br>
+    <button type="submit" class="my-button">Зарегистрироваться</button>
+    <br>Нажимая на кнопку "Зарегистрироваться" я соглашаюсь с публичной афертой ООО"ВААН"</br>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Карточка товара</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 100%; /* максимальная ширина карточки */
+        }
+        .product-card .labels {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap; /* разрешаем перенос лейблов на новую строку */
+            margin-bottom: 10px; /* отступ между лейблами и изображением */
+        }
+        .product-card .labels div {
+            padding: 5px 10px;
+            border-radius: 3px;
+            color: #fff;
+            font-size: 12px;
+            margin-bottom: 5px; /* уменьшаем отступ между лейблами */
+        }
+        .product-card .labels .recommend {
+            background-color: #8e44ad;
+        }
+        .product-card .labels .new {
+            background-color: #27ae60;
+        }
+        .product-card .labels .sale {
+            background-color: #e74c3c;
+        }
+        .product-card .labels .sale span {
+            background-color: #c0392b;
+            padding: 0 5px;
+            margin-left: 5px;
+            border-radius: 3px;
+        }
+        .product-card img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            max-width: 100%; /* максимальная ширина изображения */
+        }
+        .product-card .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product-card .rating {
+            color: #f39c12;
+            margin-bottom: 5px;
+        }
+        .product-card .availability {
+            color: #27ae60;
+            margin-bottom: 10px;
+        }
+        .product-card .price {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product-card .old-price {
+            text-decoration: line-through;
+            color: #999;
+            margin-bottom: 5px;
+        }
+        .product-card .savings {
+            background-color: #f1c40f;
+            padding: 5px;
+            border-radius: 3px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Медиа-запрос для мобильных устройств */
+        @media (max-width: 600px) {
+            .product-card {
+                width: 100%; /* карточка занимает всю доступную ширину */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="product-card">
+        <div class="labels">
+            <div class="recommend">СОВЕТУЕМ</div>
+            <div class="new">НОВИНКА</div>
+            <div class="sale">АКЦИЯ <span>7 ДНЕЙ</span></div>
+        </div>
+        <img src="backpack.jpeg" alt="Велосипедный рюкзак">
+        <div class="title">Велосипедный рюкзак</div>
+        <div class="rating">★★★★☆</div>
+        <div class="availability">Мало</div>
+        <div class="price">1 529.10 руб. /шт</div>
+        <div class="old-price">1 699 руб.</div>
+        <div class="savings">Экономия 169.90 руб.</div>
+    </div>
+</body>
+</html>

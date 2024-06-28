@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Example</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1.5fr 0.5fr 1fr;
+            gap: 0px 0px;
+            grid-auto-flow: row;
+            grid-template-areas:
+                "fd23 -wqefd zz"
+                "fds цйуаукйц fdss"
+                "dsaas dsadasd dasdasdasdas"
+                "zzcx zzcx zzcx";
+        }
+
+        .container > div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            border: 2px solid #000;
+        }
+
+        .fd23 { grid-area: fd23; background-color: lightblue; }
+        .fds { grid-area: fds; background-color: lightcoral; }
+        .fdss { grid-area: fdss; background-color: lightgoldenrodyellow; }
+        .zz { grid-area: zz; background-color: lightgreen; }
+        .zzcx { grid-area: zzcx; background-color: lightpink; }
+        .dsaas { grid-area: dsaas; background-color: lightseagreen; }
+        .dsadasd { grid-area: dsadasd; background-color: lightskyblue; }
+        .dasdasdasdas { grid-area: dasdasdasdas; background-color: lightsteelblue; }
+        .-wqefd { grid-area: -wqefd; background-color: lightgray; }
+        .цйуаукйц { grid-area: цйуаукйц; background-color: lightyellow; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="fd23">1</div>
+        <div class="fds">2</div>
+        <div class="fdss">3</div>
+        <div class="zz">4</div>
+        <div class="zzcx">5</div>
+        <div class="dsaas">6</div>
+        <div class="dsadasd">7</div>
+        <div class="dasdasdasdas">8</div>
+        <div class="-wqefd">9</div>
+        <div class="цйуаукйц">10</div>
+    </div>
+</body>
+</html>
